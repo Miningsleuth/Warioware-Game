@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdu462hix7an7"]
+
+[ext_resource type="Texture2D" uid="uid://ps0lmp15mdmp" path="res://assets/20260712_112251.jpg" id="1_6jsh8"]
+
+[node name="TitleScreen" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 663.0
+texture = ExtResource("1_6jsh8")
+expand_mode = 1
+
+[node name="Title" type="RichTextLabel" parent="."]
+clip_contents = false
+offset_left = 164.0
+offset_top = 89.0
+offset_right = 1025.0
+offset_bottom = 285.0
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/normal_font_size = 100
+text = "Warioware Game"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 480.0
+offset_top = 270.0
+offset_right = 680.0
+offset_bottom = 570.0
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 40
+text = "Start"
+
+[node name="Settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 40
+text = "Settings"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 40
+text = "Quit"
