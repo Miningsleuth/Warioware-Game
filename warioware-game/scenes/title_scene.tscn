@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdu462hix7an7"]
+[gd_scene load_steps=3 format=3 uid="uid://bdu462hix7an7"]
 
 [ext_resource type="Texture2D" uid="uid://ps0lmp15mdmp" path="res://assets/20260712_112251.jpg" id="1_6jsh8"]
+[ext_resource type="Script" uid="uid://cbmmrjw7g4mpb" path="res://scripts/title_scene.gd" id="1_faptf"]
 
 [node name="TitleScreen" type="Node2D"]
+script = ExtResource("1_faptf")
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1152.0
@@ -32,14 +34,11 @@ theme_override_constants/outline_size = 14
 theme_override_font_sizes/font_size = 40
 text = "Start"
 
-[node name="Settings" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_constants/outline_size = 14
-theme_override_font_sizes/font_size = 40
-text = "Settings"
-
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_constants/outline_size = 14
 theme_override_font_sizes/font_size = 40
 text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
