@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct8f27lqn2n1h"]
+
+[ext_resource type="Texture2D" uid="uid://ps0lmp15mdmp" path="res://assets/20260712_112251.jpg" id="1_xdwh2"]
+
+[node name="Minigame_2" type="Node2D"]
+
+[node name="Scrolling Background" type="Parallax2D" parent="."]
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(-100, 0)
+
+[node name="Background" type="TextureRect" parent="Scrolling Background"]
+offset_right = 1162.0
+offset_bottom = 656.0
+texture = ExtResource("1_xdwh2")
+expand_mode = 1

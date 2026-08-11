@@ -1,3 +1,63 @@
-[gd_scene format=3 uid="uid://cwf51scix8vhy"]
+[gd_scene load_steps=4 format=3 uid="uid://cwf51scix8vhy"]
+
+[ext_resource type="Texture2D" uid="uid://ps0lmp15mdmp" path="res://assets/20260712_112251.jpg" id="1_386oa"]
+[ext_resource type="Script" uid="uid://bm37lutmo0v6c" path="res://scripts/level_scene.gd" id="1_a74lg"]
+[ext_resource type="Texture2D" uid="uid://bm0lhiwlxfk42" path="res://assets/5c80ee3352f6fb1f63ab1df0c4bc8c03.png" id="2_bl4ss"]
 
 [node name="level_scene" type="Node2D"]
+script = ExtResource("1_a74lg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 646.0
+texture = ExtResource("1_386oa")
+expand_mode = 1
+
+[node name="GarlicContainer" type="HBoxContainer" parent="."]
+offset_left = 250.0
+offset_top = 30.0
+offset_right = 906.0
+offset_bottom = 158.0
+
+[node name="Garlic" type="TextureRect" parent="GarlicContainer"]
+layout_mode = 2
+texture = ExtResource("2_bl4ss")
+expand_mode = 2
+
+[node name="Garlic2" type="TextureRect" parent="GarlicContainer"]
+layout_mode = 2
+texture = ExtResource("2_bl4ss")
+expand_mode = 2
+
+[node name="Garlic3" type="TextureRect" parent="GarlicContainer"]
+layout_mode = 2
+texture = ExtResource("2_bl4ss")
+expand_mode = 2
+
+[node name="Garlic4" type="TextureRect" parent="GarlicContainer"]
+layout_mode = 2
+texture = ExtResource("2_bl4ss")
+expand_mode = 2
+
+[node name="Garlic5" type="TextureRect" parent="GarlicContainer"]
+layout_mode = 2
+texture = ExtResource("2_bl4ss")
+expand_mode = 2
+
+[node name="Level" type="RichTextLabel" parent="."]
+offset_left = 53.0
+offset_top = 43.0
+offset_right = 233.0
+offset_bottom = 105.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 42
+text = "Level #"
+
+[node name="Timer" type="RichTextLabel" parent="."]
+offset_left = 970.0
+offset_top = 43.0
+offset_right = 1121.0
+offset_bottom = 108.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 42
+text = "0.0"
