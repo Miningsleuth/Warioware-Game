@@ -1,13 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://ct8f27lqn2n1h"]
 
-[ext_resource type="Texture2D" uid="uid://ps0lmp15mdmp" path="res://assets/20260712_112251.jpg" id="1_fc2r4"]
-[ext_resource type="Script" uid="uid://v08b34keyyks" path="res://scripts/minigame_2.gd" id="1_vovfg"]
-[ext_resource type="Texture2D" uid="uid://bog4vr2fcynnl" path="res://assets/image-removebg-preview.png" id="2_vovfg"]
-[ext_resource type="Script" uid="uid://c10y2flt6iwtt" path="res://scripts/button.gd" id="3_kvl8x"]
-[ext_resource type="PackedScene" uid="uid://c4th2qosnpwoa" path="res://scenes/timer.tscn" id="4_likdt"]
+[ext_resource type="Script" uid="uid://v08b34keyyks" path="res://scripts/minigame_2.gd" id="1_dqa6p"]
+[ext_resource type="Texture2D" uid="uid://ps0lmp15mdmp" path="res://assets/20260712_112251.jpg" id="1_xdwh2"]
+[ext_resource type="Texture2D" uid="uid://bog4vr2fcynnl" path="res://assets/image-removebg-preview.png" id="3_c3ytc"]
+[ext_resource type="Script" uid="uid://c10y2flt6iwtt" path="res://scripts/button.gd" id="4_eachr"]
+[ext_resource type="PackedScene" uid="uid://c4th2qosnpwoa" path="res://scenes/timer.tscn" id="5_6tcq3"]
 
 [node name="Minigame_2" type="Node2D"]
-script = ExtResource("1_vovfg")
+script = ExtResource("1_dqa6p")
 
 [node name="Scrolling Background" type="Parallax2D" parent="."]
 repeat_size = Vector2(1000, 0)
@@ -16,7 +16,7 @@ autoscroll = Vector2(-100, 0)
 [node name="Background" type="TextureRect" parent="Scrolling Background"]
 offset_right = 1162.0
 offset_bottom = 656.0
-texture = ExtResource("1_fc2r4")
+texture = ExtResource("1_xdwh2")
 expand_mode = 1
 
 [node name="Button_1" type="TextureButton" parent="."]
@@ -24,80 +24,89 @@ offset_left = 59.0
 offset_top = 47.0
 offset_right = 209.0
 offset_bottom = 197.0
-texture_normal = ExtResource("2_vovfg")
+texture_normal = ExtResource("3_c3ytc")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("3_kvl8x")
+script = ExtResource("4_eachr")
 
 [node name="Button_2" type="TextureButton" parent="."]
 offset_left = 107.0
 offset_top = 303.0
 offset_right = 257.0
 offset_bottom = 453.0
-texture_normal = ExtResource("2_vovfg")
+texture_normal = ExtResource("3_c3ytc")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("3_kvl8x")
+script = ExtResource("4_eachr")
 
 [node name="Button_6" type="TextureButton" parent="."]
 offset_left = 769.0
 offset_top = 386.0
 offset_right = 919.0
 offset_bottom = 536.0
-texture_normal = ExtResource("2_vovfg")
+texture_normal = ExtResource("3_c3ytc")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("3_kvl8x")
+script = ExtResource("4_eachr")
 
 [node name="Button_7" type="TextureButton" parent="."]
 offset_left = 369.0
 offset_top = 190.0
 offset_right = 519.0
 offset_bottom = 340.0
-texture_normal = ExtResource("2_vovfg")
+texture_normal = ExtResource("3_c3ytc")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("3_kvl8x")
+script = ExtResource("4_eachr")
 
 [node name="Button_8" type="TextureButton" parent="."]
 offset_left = 580.0
 offset_top = 303.0
 offset_right = 730.0
 offset_bottom = 453.0
-texture_normal = ExtResource("2_vovfg")
+texture_normal = ExtResource("3_c3ytc")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("3_kvl8x")
+script = ExtResource("4_eachr")
 
 [node name="Button_3" type="TextureButton" parent="."]
 offset_left = 335.0
 offset_top = 41.0
 offset_right = 485.0
 offset_bottom = 191.0
-texture_normal = ExtResource("2_vovfg")
+texture_normal = ExtResource("3_c3ytc")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("3_kvl8x")
+script = ExtResource("4_eachr")
 
 [node name="Button_4" type="TextureButton" parent="."]
 offset_left = 303.0
 offset_top = 371.0
 offset_right = 453.0
 offset_bottom = 521.0
-texture_normal = ExtResource("2_vovfg")
+texture_normal = ExtResource("3_c3ytc")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("3_kvl8x")
+script = ExtResource("4_eachr")
 
 [node name="Button_5" type="TextureButton" parent="."]
 offset_left = 711.0
 offset_top = 100.0
 offset_right = 861.0
 offset_bottom = 250.0
-texture_normal = ExtResource("2_vovfg")
+texture_normal = ExtResource("3_c3ytc")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("3_kvl8x")
+script = ExtResource("4_eachr")
 
-[node name="ThemedTimer" parent="." instance=ExtResource("4_likdt")]
+[node name="ThemedTimer" parent="." instance=ExtResource("5_6tcq3")]
 position = Vector2(947, 18)
+
+[connection signal="pressed" from="Button_1" to="Button_1" method="_on_pressed"]
+[connection signal="pressed" from="Button_2" to="Button_2" method="_on_pressed"]
+[connection signal="pressed" from="Button_6" to="Button_6" method="_on_pressed"]
+[connection signal="pressed" from="Button_7" to="Button_7" method="_on_pressed"]
+[connection signal="pressed" from="Button_8" to="Button_8" method="_on_pressed"]
+[connection signal="pressed" from="Button_3" to="Button_3" method="_on_pressed"]
+[connection signal="pressed" from="Button_4" to="Button_4" method="_on_pressed"]
+[connection signal="pressed" from="Button_5" to="Button_5" method="_on_pressed"]
