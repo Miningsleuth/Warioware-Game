@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://r07aklq82fvx"]
+
+[ext_resource type="Texture2D" uid="uid://ps0lmp15mdmp" path="res://assets/20260712_112251.jpg" id="1_3idvb"]
+
+[node name="death_scene" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 663.0
+texture = ExtResource("1_3idvb")
+expand_mode = 1
+
+[node name="Label" type="RichTextLabel" parent="."]
+offset_left = 250.0
+offset_top = 250.0
+offset_right = 900.0
+offset_bottom = 350.0
+theme_override_font_sizes/normal_font_size = 64
+text = "You Lose!"
+horizontal_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="."]
+offset_left = 247.0
+offset_top = 136.0
+offset_right = 893.0
+offset_bottom = 688.0
+theme_override_font_sizes/normal_font_size = 200
+text = "
+😔"
+horizontal_alignment = 1
