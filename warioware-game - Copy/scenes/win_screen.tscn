@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/win_screen.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/20260712_112251.jpg" id="2"]
+[ext_resource type="Texture2D" path="res://assets/5c80ee3352f6fb1f63ab1df0c4bc8c03.png" id="3"]
+
+[node name="WinScreen" type="Node2D"]
+script = ExtResource("1")
+fall_texture = ExtResource("3")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2")
+expand_mode = 1
+
+[node name="Label" type="RichTextLabel" parent="."]
+offset_left = 250.0
+offset_top = 250.0
+offset_right = 900.0
+offset_bottom = 350.0
+theme_override_font_sizes/normal_font_size = 64
+text = "You Won!"
+horizontal_alignment = 1
