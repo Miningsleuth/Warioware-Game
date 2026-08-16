@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://r07aklq82fvx"]
+[gd_scene load_steps=8 format=3 uid="uid://r07aklq82fvx"]
 
 [ext_resource type="Texture2D" uid="uid://ps0lmp15mdmp" path="res://assets/20260712_112251.jpg" id="1_3idvb"]
 
@@ -17,18 +17,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 0.37307012, 0.5414711, 1), Color(1, 0, 0, 1), Color(1, 0.37307012, 0.5414711, 1)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath(".:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.0333333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 0, 0, 1), Color(1, 0.494251, 0.42709014, 1), Color(1, 0, 0, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_o2qfb"]
 length = 0.001
@@ -44,23 +32,49 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vcjmr"]
 _data = {
 &"RESET": SubResource("Animation_o2qfb"),
 &"losing": SubResource("Animation_3idvb")
+}
+
+[sub_resource type="Animation" id="Animation_vcjmr"]
+resource_name = "sad face"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 5.0666666, 10.033334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(265, 48), Vector2(265, 150), Vector2(265, 48)]
+}
+
+[sub_resource type="Animation" id="Animation_dkhfj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(265, 48)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mr0a8"]
+_data = {
+&"RESET": SubResource("Animation_dkhfj"),
+&"sad face": SubResource("Animation_vcjmr")
 }
 
 [node name="death_scene" type="Node2D"]
@@ -72,6 +86,7 @@ texture = ExtResource("1_3idvb")
 expand_mode = 1
 
 [node name="You Lose Text" type="RichTextLabel" parent="."]
+self_modulate = Color(1, 0.12521029, 0.10819614, 1)
 offset_left = 264.0
 offset_top = 131.0
 offset_right = 914.0
@@ -87,11 +102,17 @@ libraries = {
 autoplay = "losing"
 
 [node name="Sad Face" type="RichTextLabel" parent="."]
-offset_left = 262.0
-offset_top = 81.0
-offset_right = 908.0
-offset_bottom = 549.0
+offset_left = 265.0
+offset_top = 48.0
+offset_right = 911.0
+offset_bottom = 516.00476
 theme_override_font_sizes/normal_font_size = 200
 text = "
 😔"
 horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sad Face"]
+libraries = {
+&"": SubResource("AnimationLibrary_mr0a8")
+}
+autoplay = "sad face"
