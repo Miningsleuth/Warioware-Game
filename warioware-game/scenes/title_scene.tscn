@@ -1,7 +1,69 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdu462hix7an7"]
+[gd_scene load_steps=6 format=3 uid="uid://bdu462hix7an7"]
 
 [ext_resource type="Texture2D" uid="uid://ps0lmp15mdmp" path="res://assets/20260712_112251.jpg" id="1_6jsh8"]
 [ext_resource type="Script" uid="uid://cbmmrjw7g4mpb" path="res://scripts/title_scene.gd" id="1_faptf"]
+
+[sub_resource type="Animation" id="Animation_faptf"]
+resource_name = "title"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(164, 89), Vector2(164, 50), Vector2(164, 89)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5, 5.0333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 1, 1, 1), Color(0.52719474, 1, 0.6023919, 1), Color(0, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4k7ef"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(164, 89)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l8sac"]
+_data = {
+&"RESET": SubResource("Animation_4k7ef"),
+&"title": SubResource("Animation_faptf")
+}
 
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource("1_faptf")
@@ -17,10 +79,16 @@ clip_contents = false
 offset_left = 164.0
 offset_top = 89.0
 offset_right = 1025.0
-offset_bottom = 285.0
+offset_bottom = 285.00745
 theme_override_constants/outline_size = 40
 theme_override_font_sizes/normal_font_size = 100
 text = "Warioware Game"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Title"]
+libraries = {
+&"": SubResource("AnimationLibrary_l8sac")
+}
+autoplay = "title"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 480.0
