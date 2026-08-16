@@ -17,6 +17,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 0.37307012, 0.5414711, 1), Color(1, 0, 0, 1), Color(1, 0.37307012, 0.5414711, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:theme_override_font_sizes/normal_font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [64, 70, 64]
+}
 
 [sub_resource type="Animation" id="Animation_o2qfb"]
 length = 0.001
@@ -31,6 +43,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:theme_override_font_sizes/normal_font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [64]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vcjmr"]
@@ -89,8 +113,8 @@ expand_mode = 1
 self_modulate = Color(1, 0.12521029, 0.10819614, 1)
 offset_left = 264.0
 offset_top = 131.0
-offset_right = 914.0
-offset_bottom = 231.0
+offset_right = 926.9235
+offset_bottom = 233.58472
 theme_override_font_sizes/normal_font_size = 64
 text = "You Lose!"
 horizontal_alignment = 1
