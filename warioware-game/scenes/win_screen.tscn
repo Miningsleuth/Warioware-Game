@@ -1,8 +1,46 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=7 format=3 uid="uid://hscqknl7q5bx"]
 
-[ext_resource type="Script" path="res://scripts/win_screen.gd" id="1"]
-[ext_resource type="Texture2D" path="res://assets/20260712_112251.jpg" id="2"]
-[ext_resource type="Texture2D" path="res://assets/5c80ee3352f6fb1f63ab1df0c4bc8c03.png" id="3"]
+[ext_resource type="Script" uid="uid://coyn6wjo2nyk4" path="res://scripts/win_screen.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://ps0lmp15mdmp" path="res://assets/20260712_112251.jpg" id="2"]
+[ext_resource type="Texture2D" uid="uid://bm0lhiwlxfk42" path="res://assets/5c80ee3352f6fb1f63ab1df0c4bc8c03.png" id="3"]
+
+[sub_resource type="Animation" id="Animation_2l6cc"]
+resource_name = "winning"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.13333334, 0.96666664, 2.0333333, 2.9666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.2627451, 1, 1, 1), Color(0.663503, 0.99999994, 0.2164202, 1), Color(0.99866706, 0.8397366, 0.76909184, 1), Color(0.2627451, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_e41g7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0lrm4"]
+_data = {
+&"RESET": SubResource("Animation_e41g7"),
+&"winning": SubResource("Animation_2l6cc")
+}
 
 [node name="WinScreen" type="Node2D"]
 script = ExtResource("1")
@@ -22,3 +60,9 @@ offset_bottom = 350.0
 theme_override_font_sizes/normal_font_size = 64
 text = "You Won!"
 horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label"]
+libraries = {
+&"": SubResource("AnimationLibrary_0lrm4")
+}
+autoplay = "winning"
