@@ -1,7 +1,34 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdu462hix7an7"]
+[gd_scene load_steps=12 format=3 uid="uid://bdu462hix7an7"]
 
 [ext_resource type="Texture2D" uid="uid://ps0lmp15mdmp" path="res://assets/20260712_112251.jpg" id="1_6jsh8"]
 [ext_resource type="Script" uid="uid://cbmmrjw7g4mpb" path="res://scripts/title_scene.gd" id="1_faptf"]
+
+[sub_resource type="Animation" id="Animation_4k7ef"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(164, 89)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_faptf"]
 resource_name = "title"
@@ -32,7 +59,91 @@ tracks/1/keys = {
 "values": [Color(0, 1, 1, 1), Color(0.52719474, 1, 0.6023919, 1), Color(0, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_4k7ef"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l8sac"]
+_data = {
+&"RESET": SubResource("Animation_4k7ef"),
+&"title": SubResource("Animation_faptf")
+}
+
+[sub_resource type="Animation" id="Animation_l8sac"]
+resource_name = "button"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Start:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.76862746, 1, 0.9490196, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Quit:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.76862746, 1, 0.9490196, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bq8jb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Start:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Quit:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l5n7b"]
+_data = {
+&"RESET": SubResource("Animation_bq8jb"),
+&"button": SubResource("Animation_l8sac")
+}
+
+[sub_resource type="Animation" id="Animation_s8xmt"]
+resource_name = "enjoy"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(520, 571), Vector2(520, 480), Vector2(520, 571)]
+}
+
+[sub_resource type="Animation" id="Animation_7rdyk"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -44,25 +155,13 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(164, 89)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Vector2(0, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_l8sac"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ofksa"]
 _data = {
-&"RESET": SubResource("Animation_4k7ef"),
-&"title": SubResource("Animation_faptf")
+&"RESET": SubResource("Animation_7rdyk"),
+&"enjoy": SubResource("Animation_s8xmt")
 }
 
 [node name="TitleScreen" type="Node2D"]
@@ -107,6 +206,24 @@ layout_mode = 2
 theme_override_constants/outline_size = 14
 theme_override_font_sizes/font_size = 40
 text = "Quit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer"]
+libraries = {
+&"": SubResource("AnimationLibrary_l5n7b")
+}
+autoplay = "button"
+
+[node name="Label" type="Label" parent="."]
+offset_right = 135.0
+offset_bottom = 23.001038
+text = "Hope You Enjoy :)"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label"]
+libraries = {
+&"": SubResource("AnimationLibrary_ofksa")
+}
+autoplay = "enjoy"
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -2,6 +2,33 @@
 
 [ext_resource type="Texture2D" uid="uid://ps0lmp15mdmp" path="res://assets/20260712_112251.jpg" id="1_3idvb"]
 
+[sub_resource type="Animation" id="Animation_o2qfb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:theme_override_font_sizes/normal_font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [64]
+}
+
 [sub_resource type="Animation" id="Animation_3idvb"]
 resource_name = "losing"
 loop_mode = 1
@@ -30,37 +57,25 @@ tracks/1/keys = {
 "values": [64, 70, 64]
 }
 
-[sub_resource type="Animation" id="Animation_o2qfb"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vcjmr"]
+_data = {
+&"RESET": SubResource("Animation_o2qfb"),
+&"losing": SubResource("Animation_3idvb")
+}
+
+[sub_resource type="Animation" id="Animation_dkhfj"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:theme_override_font_sizes/normal_font_size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [64]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_vcjmr"]
-_data = {
-&"RESET": SubResource("Animation_o2qfb"),
-&"losing": SubResource("Animation_3idvb")
+"values": [Vector2(265, 48)]
 }
 
 [sub_resource type="Animation" id="Animation_vcjmr"]
@@ -78,21 +93,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(265, 48), Vector2(265, 150), Vector2(265, 48)]
-}
-
-[sub_resource type="Animation" id="Animation_dkhfj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(265, 48)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mr0a8"]
