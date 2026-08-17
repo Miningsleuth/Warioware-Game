@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://r07aklq82fvx"]
+[gd_scene load_steps=10 format=3 uid="uid://r07aklq82fvx"]
 
 [ext_resource type="Texture2D" uid="uid://ps0lmp15mdmp" path="res://assets/20260712_112251.jpg" id="1_3idvb"]
 [ext_resource type="PackedScene" uid="uid://bb4ksxu6fbk5m" path="res://scenes/player.tscn" id="2_o2qfb"]
@@ -62,56 +62,6 @@ tracks/1/keys = {
 _data = {
 &"RESET": SubResource("Animation_o2qfb"),
 &"losing": SubResource("Animation_3idvb")
-}
-
-[sub_resource type="Animation" id="Animation_dkhfj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(265, 48)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("../Platform:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-
-[sub_resource type="Animation" id="Animation_vcjmr"]
-resource_name = "sad face"
-length = 10.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.033333335, 5.0666666, 10.033334),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(265, 48), Vector2(265, 150), Vector2(265, 48)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_mr0a8"]
-_data = {
-&"RESET": SubResource("Animation_dkhfj"),
-&"sad face": SubResource("Animation_vcjmr")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2qfb"]
@@ -627,22 +577,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_vcjmr")
 }
 autoplay = "losing"
-
-[node name="Sad Face" type="RichTextLabel" parent="."]
-offset_left = 265.0
-offset_top = 48.0
-offset_right = 911.0
-offset_bottom = 516.00476
-theme_override_font_sizes/normal_font_size = 200
-text = "
-😔"
-horizontal_alignment = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sad Face"]
-libraries = {
-&"": SubResource("AnimationLibrary_mr0a8")
-}
-autoplay = "sad face"
 
 [node name="Platform" type="StaticBody2D" parent="."]
 position = Vector2(167, 1420)
