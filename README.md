@@ -8,10 +8,11 @@ A Warioware game by Charlie for the Stardance Mission
 ## Features
 - 2 Minigames: Platformer & Clicker
 - Win & Death Screens
-- Life tracking
+- Keeps track of lives
 
 ## Attribution
 Thanks to the Warioware Game making guide on Stardance
+Thanks to Stardance for giving rewards for this project
 
 ## How to Play
 - Access game at itch.io
@@ -22,4 +23,13 @@ Thanks to the Warioware Game making guide on Stardance
 - If your lives run out, you lose! Complete both levels to win!
 - Enjoy!
 
+## Updates
+I am unlikely to add more or update this game anytime soon, but for updates go to itch.io to check the release!
+
 Created for a mission on Stardance by Hackclub
+
+This game was made using Godot 4.5.1
+
+Thanks for playing!
+
+By Charlie Lindsay
