@@ -188,13 +188,13 @@ texture = ExtResource("1_3idvb")
 expand_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("2_o2qfb")]
-position = Vector2(504, -152)
+position = Vector2(614, -152)
 
 [node name="Player2" parent="." instance=ExtResource("2_o2qfb")]
-position = Vector2(472, -474)
+position = Vector2(513, -294)
 
 [node name="Player2" parent="Player2" instance=ExtResource("2_o2qfb")]
-position = Vector2(207, -522)
+position = Vector2(228, -515)
 
 [node name="Player2" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
 position = Vector2(-96, -1070)
@@ -203,7 +203,7 @@ position = Vector2(-96, -1070)
 position = Vector2(-110, -840)
 
 [node name="Player31" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
-position = Vector2(-244, -596)
+position = Vector2(-200, -1128)
 
 [node name="Player32" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
 position = Vector2(-244, -961)
@@ -224,7 +224,7 @@ position = Vector2(-72, -468)
 position = Vector2(-110, -840)
 
 [node name="Player72" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
-position = Vector2(-244, -596)
+position = Vector2(-157, -592)
 
 [node name="Player73" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
 position = Vector2(-244, -961)
@@ -245,7 +245,7 @@ position = Vector2(12, -706)
 position = Vector2(207, -887)
 
 [node name="Player88" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
-position = Vector2(-244, -596)
+position = Vector2(-335, -560)
 
 [node name="Player89" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
 position = Vector2(-244, -961)
@@ -254,7 +254,7 @@ position = Vector2(-244, -961)
 position = Vector2(207, -887)
 
 [node name="Player97" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
-position = Vector2(472, -839)
+position = Vector2(324, -1095)
 
 [node name="Player103" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
 position = Vector2(-244, -961)
@@ -272,7 +272,7 @@ position = Vector2(-160, -1199)
 position = Vector2(-96, -1070)
 
 [node name="Player2" parent="Player2/Player2/Player7" instance=ExtResource("2_o2qfb")]
-position = Vector2(-244, -596)
+position = Vector2(-247, -706)
 
 [node name="Player3" parent="Player2/Player2/Player7" instance=ExtResource("2_o2qfb")]
 position = Vector2(-244, -961)
@@ -311,7 +311,7 @@ position = Vector2(-160, -1199)
 position = Vector2(-96, -1070)
 
 [node name="Player2" parent="Player2/Player2/Player15/Player7" instance=ExtResource("2_o2qfb")]
-position = Vector2(-244, -596)
+position = Vector2(-268, -612)
 
 [node name="Player8" parent="Player2/Player2/Player15" instance=ExtResource("2_o2qfb")]
 position = Vector2(-96, -1435)
@@ -329,7 +329,7 @@ position = Vector2(-134, -1807)
 position = Vector2(-12, -1673)
 
 [node name="Player16" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
-position = Vector2(-72, -468)
+position = Vector2(-90, -363)
 
 [node name="Player17" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
 position = Vector2(-110, -840)
@@ -344,7 +344,7 @@ position = Vector2(-60, -1140)
 position = Vector2(207, -887)
 
 [node name="Player20" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
-position = Vector2(-72, -103)
+position = Vector2(-172, 35)
 
 [node name="Player2" parent="Player2/Player2/Player20" instance=ExtResource("2_o2qfb")]
 position = Vector2(-244, -596)
@@ -353,13 +353,13 @@ position = Vector2(-244, -596)
 position = Vector2(-244, -961)
 
 [node name="Player4" parent="Player2/Player2/Player20" instance=ExtResource("2_o2qfb")]
-position = Vector2(-282, -1333)
+position = Vector2(-353, -1373)
 
 [node name="Player5" parent="Player2/Player2/Player20" instance=ExtResource("2_o2qfb")]
 position = Vector2(-160, -1199)
 
 [node name="Player21" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
-position = Vector2(-72, -468)
+position = Vector2(-240, -365)
 
 [node name="Player22" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
 position = Vector2(-110, -840)
@@ -494,7 +494,7 @@ position = Vector2(-160, -1199)
 position = Vector2(219, -1559)
 
 [node name="Player3" parent="Player2/Player2/Player32" instance=ExtResource("2_o2qfb")]
-position = Vector2(-72, -468)
+position = Vector2(-186, -663)
 
 [node name="Player33" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
 position = Vector2(207, -522)
@@ -524,16 +524,16 @@ position = Vector2(-160, -1199)
 position = Vector2(219, -1559)
 
 [node name="Player38" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
-position = Vector2(472, -839)
+position = Vector2(347, -593)
 
 [node name="Player39" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
-position = Vector2(434, -1211)
+position = Vector2(351, -1197)
 
 [node name="Player40" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
-position = Vector2(556, -1077)
+position = Vector2(400, -1031)
 
 [node name="Player41" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
-position = Vector2(484, -1511)
+position = Vector2(349, -1733)
 
 [node name="Player3" parent="Player2" instance=ExtResource("2_o2qfb")]
 position = Vector2(207, -887)
@@ -557,7 +557,7 @@ position = Vector2(-110, -840)
 position = Vector2(12, -706)
 
 [node name="Player7" parent="Player2" instance=ExtResource("2_o2qfb")]
-position = Vector2(207, -522)
+position = Vector2(138, -329)
 
 [node name="Player2" parent="Player2/Player7" instance=ExtResource("2_o2qfb")]
 position = Vector2(-244, -596)
@@ -566,13 +566,13 @@ position = Vector2(-244, -596)
 position = Vector2(-244, -961)
 
 [node name="Player4" parent="Player2/Player7" instance=ExtResource("2_o2qfb")]
-position = Vector2(-282, -1333)
+position = Vector2(-339, -1473)
 
 [node name="Player5" parent="Player2/Player7" instance=ExtResource("2_o2qfb")]
 position = Vector2(-160, -1199)
 
 [node name="Player8" parent="Player2" instance=ExtResource("2_o2qfb")]
-position = Vector2(207, -887)
+position = Vector2(296, -885)
 
 [node name="Player9" parent="Player2" instance=ExtResource("2_o2qfb")]
 position = Vector2(169, -1259)
@@ -584,16 +584,33 @@ position = Vector2(-160, -1199)
 position = Vector2(219, -1559)
 
 [node name="Player3" parent="." instance=ExtResource("2_o2qfb")]
-position = Vector2(472, -839)
+position = Vector2(427, -456)
 
 [node name="Player4" parent="." instance=ExtResource("2_o2qfb")]
 position = Vector2(434, -1211)
 
 [node name="Player5" parent="." instance=ExtResource("2_o2qfb")]
-position = Vector2(556, -1077)
+position = Vector2(432, -949)
 
 [node name="Player6" parent="." instance=ExtResource("2_o2qfb")]
 position = Vector2(484, -1511)
+
+[node name="You Lose Text2" type="RichTextLabel" parent="."]
+self_modulate = Color(1, 0.12521029, 0.10819614, 1)
+offset_left = 259.0
+offset_top = 562.0
+offset_right = 921.9236
+offset_bottom = 664.5847
+theme_override_font_sizes/normal_font_size = 64
+text = "Thanks for playing!"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="You Lose Text2"]
+root_node = NodePath("../../You Lose Text2")
+libraries = {
+&"": SubResource("AnimationLibrary_vcjmr")
+}
+autoplay = "losing"
 
 [node name="You Lose Text" type="RichTextLabel" parent="."]
 self_modulate = Color(1, 0.12521029, 0.10819614, 1)
