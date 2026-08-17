@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://r07aklq82fvx"]
+[gd_scene load_steps=13 format=3 uid="uid://r07aklq82fvx"]
 
 [ext_resource type="Texture2D" uid="uid://ps0lmp15mdmp" path="res://assets/20260712_112251.jpg" id="1_3idvb"]
+[ext_resource type="PackedScene" uid="uid://bb4ksxu6fbk5m" path="res://scenes/player.tscn" id="2_o2qfb"]
 
 [sub_resource type="Animation" id="Animation_o2qfb"]
 length = 0.001
@@ -77,6 +78,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(265, 48)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("../Platform:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
 
 [sub_resource type="Animation" id="Animation_vcjmr"]
 resource_name = "sad face"
@@ -101,6 +114,71 @@ _data = {
 &"sad face": SubResource("Animation_vcjmr")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2qfb"]
+size = Vector2(978, 40)
+
+[sub_resource type="Animation" id="Animation_mr0a8"]
+resource_name = "death anim"
+length = 60.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.4666667, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(167, 1420), Vector2(167, 3500), Vector2(167, 1420)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 60.233334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(489, 20), Vector2(489, 3000)]
+}
+
+[sub_resource type="Animation" id="Animation_f78ek"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(167, 1420)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(489, 20)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ufsib"]
+_data = {
+&"RESET": SubResource("Animation_f78ek"),
+&"death anim": SubResource("Animation_mr0a8")
+}
+
 [node name="death_scene" type="Node2D"]
 
 [node name="Background" type="TextureRect" parent="."]
@@ -108,6 +186,414 @@ offset_right = 1152.0
 offset_bottom = 663.0
 texture = ExtResource("1_3idvb")
 expand_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("2_o2qfb")]
+position = Vector2(504, -152)
+
+[node name="Player2" parent="." instance=ExtResource("2_o2qfb")]
+position = Vector2(472, -474)
+
+[node name="Player2" parent="Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(207, -522)
+
+[node name="Player2" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-96, -1070)
+
+[node name="Player28" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-110, -840)
+
+[node name="Player31" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-244, -596)
+
+[node name="Player32" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-244, -961)
+
+[node name="Player36" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-110, -840)
+
+[node name="Player39" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-110, -840)
+
+[node name="Player40" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(12, -706)
+
+[node name="Player68" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-72, -468)
+
+[node name="Player69" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-110, -840)
+
+[node name="Player72" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-244, -596)
+
+[node name="Player73" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-244, -961)
+
+[node name="Player77" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-72, -468)
+
+[node name="Player78" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-110, -840)
+
+[node name="Player81" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-110, -840)
+
+[node name="Player82" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(12, -706)
+
+[node name="Player84" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(207, -887)
+
+[node name="Player88" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-244, -596)
+
+[node name="Player89" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-244, -961)
+
+[node name="Player93" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(207, -887)
+
+[node name="Player97" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(472, -839)
+
+[node name="Player103" parent="Player2/Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-244, -961)
+
+[node name="Player3" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-96, -1435)
+
+[node name="Player4" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-134, -1807)
+
+[node name="Player5" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-160, -1199)
+
+[node name="Player7" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-96, -1070)
+
+[node name="Player2" parent="Player2/Player2/Player7" instance=ExtResource("2_o2qfb")]
+position = Vector2(-244, -596)
+
+[node name="Player3" parent="Player2/Player2/Player7" instance=ExtResource("2_o2qfb")]
+position = Vector2(-244, -961)
+
+[node name="Player8" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-96, -1435)
+
+[node name="Player9" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-134, -1807)
+
+[node name="Player10" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-160, -1199)
+
+[node name="Player12" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-134, -1807)
+
+[node name="Player13" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-12, -1673)
+
+[node name="Player15" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-72, -103)
+
+[node name="Player2" parent="Player2/Player2/Player15" instance=ExtResource("2_o2qfb")]
+position = Vector2(-96, -1070)
+
+[node name="Player3" parent="Player2/Player2/Player15" instance=ExtResource("2_o2qfb")]
+position = Vector2(-96, -1435)
+
+[node name="Player4" parent="Player2/Player2/Player15" instance=ExtResource("2_o2qfb")]
+position = Vector2(-134, -1807)
+
+[node name="Player5" parent="Player2/Player2/Player15" instance=ExtResource("2_o2qfb")]
+position = Vector2(-160, -1199)
+
+[node name="Player7" parent="Player2/Player2/Player15" instance=ExtResource("2_o2qfb")]
+position = Vector2(-96, -1070)
+
+[node name="Player2" parent="Player2/Player2/Player15/Player7" instance=ExtResource("2_o2qfb")]
+position = Vector2(-244, -596)
+
+[node name="Player8" parent="Player2/Player2/Player15" instance=ExtResource("2_o2qfb")]
+position = Vector2(-96, -1435)
+
+[node name="Player9" parent="Player2/Player2/Player15" instance=ExtResource("2_o2qfb")]
+position = Vector2(-134, -1807)
+
+[node name="Player10" parent="Player2/Player2/Player15" instance=ExtResource("2_o2qfb")]
+position = Vector2(-160, -1199)
+
+[node name="Player12" parent="Player2/Player2/Player15" instance=ExtResource("2_o2qfb")]
+position = Vector2(-134, -1807)
+
+[node name="Player13" parent="Player2/Player2/Player15" instance=ExtResource("2_o2qfb")]
+position = Vector2(-12, -1673)
+
+[node name="Player16" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-72, -468)
+
+[node name="Player17" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-110, -840)
+
+[node name="Player18" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-160, -1199)
+
+[node name="Player19" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-60, -1140)
+
+[node name="Player3" parent="Player2/Player2/Player19" instance=ExtResource("2_o2qfb")]
+position = Vector2(207, -887)
+
+[node name="Player20" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-72, -103)
+
+[node name="Player2" parent="Player2/Player2/Player20" instance=ExtResource("2_o2qfb")]
+position = Vector2(-244, -596)
+
+[node name="Player3" parent="Player2/Player2/Player20" instance=ExtResource("2_o2qfb")]
+position = Vector2(-244, -961)
+
+[node name="Player4" parent="Player2/Player2/Player20" instance=ExtResource("2_o2qfb")]
+position = Vector2(-282, -1333)
+
+[node name="Player5" parent="Player2/Player2/Player20" instance=ExtResource("2_o2qfb")]
+position = Vector2(-160, -1199)
+
+[node name="Player21" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-72, -468)
+
+[node name="Player22" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-110, -840)
+
+[node name="Player23" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-160, -1199)
+
+[node name="Player24" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-60, -1140)
+
+[node name="Player25" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-110, -840)
+
+[node name="Player26" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(12, -706)
+
+[node name="Player27" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-60, -1140)
+
+[node name="Player28" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(207, -522)
+
+[node name="Player2" parent="Player2/Player2/Player28" instance=ExtResource("2_o2qfb")]
+position = Vector2(-96, -1070)
+
+[node name="Player3" parent="Player2/Player2/Player28" instance=ExtResource("2_o2qfb")]
+position = Vector2(-96, -1435)
+
+[node name="Player5" parent="Player2/Player2/Player28" instance=ExtResource("2_o2qfb")]
+position = Vector2(-160, -1199)
+
+[node name="Player7" parent="Player2/Player2/Player28" instance=ExtResource("2_o2qfb")]
+position = Vector2(-96, -1070)
+
+[node name="Player6" parent="Player2/Player2/Player28/Player7" instance=ExtResource("2_o2qfb")]
+position = Vector2(117, -5129)
+
+[node name="Player3" parent="Player2/Player2/Player28/Player7/Player6" instance=ExtResource("2_o2qfb")]
+position = Vector2(-72, -468)
+
+[node name="Player4" parent="Player2/Player2/Player28/Player7/Player6" instance=ExtResource("2_o2qfb")]
+position = Vector2(-110, -840)
+
+[node name="Player5" parent="Player2/Player2/Player28/Player7/Player6" instance=ExtResource("2_o2qfb")]
+position = Vector2(12, -706)
+
+[node name="Player8" parent="Player2/Player2/Player28" instance=ExtResource("2_o2qfb")]
+position = Vector2(-96, -1435)
+
+[node name="Player10" parent="Player2/Player2/Player28" instance=ExtResource("2_o2qfb")]
+position = Vector2(-160, -1199)
+
+[node name="Player15" parent="Player2/Player2/Player28" instance=ExtResource("2_o2qfb")]
+position = Vector2(-72, -103)
+
+[node name="Player2" parent="Player2/Player2/Player28/Player15" instance=ExtResource("2_o2qfb")]
+position = Vector2(-96, -1070)
+
+[node name="Player3" parent="Player2/Player2/Player28/Player15" instance=ExtResource("2_o2qfb")]
+position = Vector2(-96, -1435)
+
+[node name="Player5" parent="Player2/Player2/Player28/Player15" instance=ExtResource("2_o2qfb")]
+position = Vector2(-160, -1199)
+
+[node name="Player7" parent="Player2/Player2/Player28/Player15" instance=ExtResource("2_o2qfb")]
+position = Vector2(-96, -1070)
+
+[node name="Player8" parent="Player2/Player2/Player28/Player15" instance=ExtResource("2_o2qfb")]
+position = Vector2(-96, -1435)
+
+[node name="Player10" parent="Player2/Player2/Player28/Player15" instance=ExtResource("2_o2qfb")]
+position = Vector2(-160, -1199)
+
+[node name="Player16" parent="Player2/Player2/Player28" instance=ExtResource("2_o2qfb")]
+position = Vector2(-72, -468)
+
+[node name="Player17" parent="Player2/Player2/Player28" instance=ExtResource("2_o2qfb")]
+position = Vector2(-110, -840)
+
+[node name="Player18" parent="Player2/Player2/Player28" instance=ExtResource("2_o2qfb")]
+position = Vector2(-160, -1199)
+
+[node name="Player19" parent="Player2/Player2/Player28" instance=ExtResource("2_o2qfb")]
+position = Vector2(-60, -1140)
+
+[node name="Player20" parent="Player2/Player2/Player28" instance=ExtResource("2_o2qfb")]
+position = Vector2(-72, -103)
+
+[node name="Player2" parent="Player2/Player2/Player28/Player20" instance=ExtResource("2_o2qfb")]
+position = Vector2(-244, -596)
+
+[node name="Player3" parent="Player2/Player2/Player28/Player20" instance=ExtResource("2_o2qfb")]
+position = Vector2(-244, -961)
+
+[node name="Player4" parent="Player2/Player2/Player28/Player20" instance=ExtResource("2_o2qfb")]
+position = Vector2(-282, -1333)
+
+[node name="Player5" parent="Player2/Player2/Player28/Player20" instance=ExtResource("2_o2qfb")]
+position = Vector2(-160, -1199)
+
+[node name="Player21" parent="Player2/Player2/Player28" instance=ExtResource("2_o2qfb")]
+position = Vector2(-72, -468)
+
+[node name="Player22" parent="Player2/Player2/Player28" instance=ExtResource("2_o2qfb")]
+position = Vector2(-110, -840)
+
+[node name="Player23" parent="Player2/Player2/Player28" instance=ExtResource("2_o2qfb")]
+position = Vector2(-160, -1199)
+
+[node name="Player24" parent="Player2/Player2/Player28" instance=ExtResource("2_o2qfb")]
+position = Vector2(-60, -1140)
+
+[node name="Player25" parent="Player2/Player2/Player28" instance=ExtResource("2_o2qfb")]
+position = Vector2(-110, -840)
+
+[node name="Player26" parent="Player2/Player2/Player28" instance=ExtResource("2_o2qfb")]
+position = Vector2(12, -706)
+
+[node name="Player27" parent="Player2/Player2/Player28" instance=ExtResource("2_o2qfb")]
+position = Vector2(-60, -1140)
+
+[node name="Player29" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(207, -887)
+
+[node name="Player30" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(169, -1259)
+
+[node name="Player31" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-160, -1199)
+
+[node name="Player32" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(219, -1559)
+
+[node name="Player3" parent="Player2/Player2/Player32" instance=ExtResource("2_o2qfb")]
+position = Vector2(-72, -468)
+
+[node name="Player33" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(207, -522)
+
+[node name="Player2" parent="Player2/Player2/Player33" instance=ExtResource("2_o2qfb")]
+position = Vector2(-244, -596)
+
+[node name="Player3" parent="Player2/Player2/Player33" instance=ExtResource("2_o2qfb")]
+position = Vector2(-244, -961)
+
+[node name="Player4" parent="Player2/Player2/Player33" instance=ExtResource("2_o2qfb")]
+position = Vector2(-282, -1333)
+
+[node name="Player5" parent="Player2/Player2/Player33" instance=ExtResource("2_o2qfb")]
+position = Vector2(-160, -1199)
+
+[node name="Player34" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(207, -887)
+
+[node name="Player35" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(169, -1259)
+
+[node name="Player36" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-160, -1199)
+
+[node name="Player37" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(219, -1559)
+
+[node name="Player38" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(472, -839)
+
+[node name="Player39" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(434, -1211)
+
+[node name="Player40" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(556, -1077)
+
+[node name="Player41" parent="Player2/Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(484, -1511)
+
+[node name="Player3" parent="Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(207, -887)
+
+[node name="Player4" parent="Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(169, -1259)
+
+[node name="Player5" parent="Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-160, -1199)
+
+[node name="Player6" parent="Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(219, -1559)
+
+[node name="Player3" parent="Player2/Player6" instance=ExtResource("2_o2qfb")]
+position = Vector2(-72, -468)
+
+[node name="Player4" parent="Player2/Player6" instance=ExtResource("2_o2qfb")]
+position = Vector2(-110, -840)
+
+[node name="Player5" parent="Player2/Player6" instance=ExtResource("2_o2qfb")]
+position = Vector2(12, -706)
+
+[node name="Player7" parent="Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(207, -522)
+
+[node name="Player2" parent="Player2/Player7" instance=ExtResource("2_o2qfb")]
+position = Vector2(-244, -596)
+
+[node name="Player3" parent="Player2/Player7" instance=ExtResource("2_o2qfb")]
+position = Vector2(-244, -961)
+
+[node name="Player4" parent="Player2/Player7" instance=ExtResource("2_o2qfb")]
+position = Vector2(-282, -1333)
+
+[node name="Player5" parent="Player2/Player7" instance=ExtResource("2_o2qfb")]
+position = Vector2(-160, -1199)
+
+[node name="Player8" parent="Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(207, -887)
+
+[node name="Player9" parent="Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(169, -1259)
+
+[node name="Player10" parent="Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(-160, -1199)
+
+[node name="Player11" parent="Player2" instance=ExtResource("2_o2qfb")]
+position = Vector2(219, -1559)
+
+[node name="Player3" parent="." instance=ExtResource("2_o2qfb")]
+position = Vector2(472, -839)
+
+[node name="Player4" parent="." instance=ExtResource("2_o2qfb")]
+position = Vector2(434, -1211)
+
+[node name="Player5" parent="." instance=ExtResource("2_o2qfb")]
+position = Vector2(556, -1077)
+
+[node name="Player6" parent="." instance=ExtResource("2_o2qfb")]
+position = Vector2(484, -1511)
 
 [node name="You Lose Text" type="RichTextLabel" parent="."]
 self_modulate = Color(1, 0.12521029, 0.10819614, 1)
@@ -140,3 +626,22 @@ libraries = {
 &"": SubResource("AnimationLibrary_mr0a8")
 }
 autoplay = "sad face"
+
+[node name="Platform" type="StaticBody2D" parent="."]
+position = Vector2(167, 1420)
+
+[node name="ColorRect" type="ColorRect" parent="Platform"]
+offset_right = 977.0
+offset_bottom = 40.0
+color = Color(0, 1, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(489, 20)
+shape = SubResource("RectangleShape2D_o2qfb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform"]
+libraries = {
+&"": SubResource("AnimationLibrary_ufsib")
+}
+autoplay = "death anim"
